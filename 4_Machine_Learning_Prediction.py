@@ -10,7 +10,7 @@ from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 from sklearn.preprocessing import StandardScaler
 @st.cache_data
 def load_sp500_list():
-    df = pd.read_csv('/Users/joshuajoseph/Downloads/archive/sp500_companies.csv')
+    df = pd.read_csv('sp500_companies.csv')
     tickers = df['Symbol'].dropna().astype(str).str.strip().tolist()
 
     fulldata = pd.DataFrame()
