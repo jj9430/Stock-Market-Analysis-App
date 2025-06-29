@@ -4,4 +4,4 @@ pandas
 matplotlib
 mplfinance
 scipy
-genai
+google-genai
