@@ -1,0 +1,13 @@
+streamlit
+pandas
+yfinance
+numpy
+matplotlib.pyplot
+requests
+json
+datetime
+mplfinance
+zscore
+genai
+types
+os
