@@ -15,7 +15,7 @@ import os
 from dotenv import load_dotenv
 @st.cache_data
 def load_sp500_list():
-    df = pd.read_csv('/Users/joshuajoseph/Downloads/archive/sp500_companies.csv')
+    df = pd.read_csv('sp500_companies.csv')
     tickers = df['Symbol'].dropna().astype(str).str.strip().tolist()
 
     fulldata = pd.DataFrame()
