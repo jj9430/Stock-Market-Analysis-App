@@ -8,3 +8,4 @@ google-genai
 dotenv
 streamlit_option_menu
 polygon-api-client
+plotly
