@@ -6,7 +6,6 @@ import json
 from typing import cast
 from urllib3 import HTTPResponse
 from plotly import graph_objects as go
-import talib
 import streamlit as st
 @st.cache_data
 def load_sp500_list():
@@ -81,17 +80,12 @@ def create_graph(symbol):
                         timesList.append(bar[category])
 
             closeList = np.array(closeList)
-            upper, middle,lower = talib.BBANDS(closeList,timeperiod=20,nbdevdn=2,matype=0)
-
             times = []
             for time in timesList:
                 times.append(pd.Timestamp(time, tz='America/Los_Angeles', unit='ms'))
             st.write("Graph for "+symbol)
             fig = go.Figure()
             fig.add_trace(go.Candlestick(x=times,open=openList,high=highList,low=lowList,close=closeList, name='Market Data'))
-            fig.add_trace(go.Scatter(x=times,y=upper, line=dict(color='blue'), name = 'BB Upper'))
-            fig.add_trace(go.Scatter(x=times,y=middle, line=dict(color='green'), name = 'BB Upper'))
-            fig.add_trace(go.Scatter(x=times,y=lower, line=dict(color='red'), name = 'BB Upper'))
 
             fig.update_layout(xaxis_rangeslider_visible=False)
 
