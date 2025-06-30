@@ -7,3 +7,4 @@ scipy
 google-genai
 dotenv
 streamlit_option_menu
+polygon
